@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'io.qameta.allure' version '2.8.1'
+    id 'io.qameta.allure' version '2.13.1'
 }
 
 compileJava.options.encoding = 'UTF-8'
@@ -16,10 +16,10 @@ allure {
     autoconfigure = true
     aspectjweaver = true
     clean = true
-    version = '2.8.1'
+    version = '2.13.1'
     autoconfigure = true
     useTestNG {
-        version = '2.8.1'
+        version = '2.13.1'
     }
     downloadLinkFormat = 'https://dl.bintray.com/qameta/maven/io/qameta/allure/allure-commandline/%s/allure-commandline-%<s.zip'
 }
@@ -37,30 +37,30 @@ dependencies {
             ['io.github.bonigarcia:webdrivermanager:3.6.2'],
             ['org.apache.bcel:bcel:6.0'],
             ['net.sf.jxls:jxls-core:1.0.6'],
-            ['io.qameta.allure:allure-testng:2.8.1']
+            ['io.qameta.allure:allure-testng:2.13.1']
     )
 
     testCompile(
             ['org.projectlombok:lombok:1.18.8'],
             ['com.codeborne:selenide:5.2.3'],
-            ['org.testng:testng:6.14.3'],
-            ['io.qameta.allure:allure-testng:2.8.1']
+            ['org.testng:testng:7.1.0'],
+            ['io.qameta.allure:allure-testng:2.13.1']
     )
 
     annotationProcessor(
             ['org.projectlombok:lombok:1.18.8'],
-            ['io.qameta.allure:allure-testng:2.8.1']
+            ['io.qameta.allure:allure-testng:2.13.1']
     )
 
     testAnnotationProcessor(
             ['org.projectlombok:lombok:1.18.8'],
-            ['io.qameta.allure:allure-testng:2.8.1']
+            ['io.qameta.allure:allure-testng:2.13.1']
     )
 
     testImplementation(
             ['org.projectlombok:lombok:1.18.8'],
             ['org.hamcrest:hamcrest:2.1'],
-            ['io.qameta.allure:allure-testng:2.8.1']
+            ['io.qameta.allure:allure-testng:2.13.1']
     )
 }
 
