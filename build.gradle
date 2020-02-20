@@ -19,7 +19,7 @@ allure {
     version = '2.8.1'
     autoconfigure = true
     useTestNG {
-        version = '2.13.1'
+        version = '2.8.1'
     }
     downloadLinkFormat = 'https://dl.bintray.com/qameta/maven/io/qameta/allure/allure-commandline/%s/allure-commandline-%<s.zip'
 }
