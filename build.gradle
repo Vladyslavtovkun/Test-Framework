@@ -17,7 +17,6 @@ allure {
     aspectjweaver = true
     clean = true
     version = '2.8.1'
-    autoconfigure = true
     useTestNG {
         version = '2.8.1'
     }
@@ -43,7 +42,7 @@ dependencies {
     testCompile(
             ['org.projectlombok:lombok:1.18.8'],
             ['com.codeborne:selenide:5.2.3'],
-            ['org.testng:testng:7.1.0'],
+            ['org.testng:testng:6.14.3'],
             ['io.qameta.allure:allure-testng:2.8.1']
     )
 
@@ -72,4 +71,3 @@ test {
     testLogging.showStandardStreams = true
     dependsOn 'cleanTest'
 }
-
