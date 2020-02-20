@@ -17,6 +17,7 @@ allure {
     aspectjweaver = true
     clean = true
     version = '2.8.1'
+    autoconfigure = true
     useTestNG {
         version = '2.8.1'
     }
