@@ -1,3 +1,4 @@
+
 pipline{
     agent {
         docker { image '53a24db657dd'
@@ -6,9 +7,13 @@ pipline{
     stages{
         stage('Setup Docker containers ') {
             steps {
-                sh 'docker-compose up -d'
+                sh "docker-compose up -d"
             }
         }
+    }
+
+    environment {
+        COMPOSE_FILE = "docker-compose.yml"
     }
 
     stage('Run Regression Suite') {
@@ -18,9 +23,9 @@ pipline{
         }
     }
 
-    stage('Close Docker containers'){
-        steps {
-            sh 'docker-compose down'
+    post {
+        always {
+            sh "docker-compose down || true"
         }
     }
 }
