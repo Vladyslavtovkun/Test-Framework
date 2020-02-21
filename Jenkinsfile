@@ -1,22 +1,26 @@
 pipline{
-    agent any
+    agent {
+        docker { image '53a24db657dd'
+            image 'c4ca190f88a7'}
+    }
     stages{
         stage('Setup Docker containers ') {
             steps {
-                sh label: '', script: 'docker-compose up -d'
+                sh 'docker-compose up -d'
             }
         }
     }
 
     stage('Run Regression Suite') {
         steps {
-            sh label: '', script: 'gradle clean test'
+            withGradle(gradle : 'GRADLE_HOME')
+            sh 'gradle clean test'
         }
     }
 
     stage('Close Docker containers'){
         steps {
-            sh label: '', script: 'docker-compose down'
+            sh 'docker-compose down'
         }
     }
 }
