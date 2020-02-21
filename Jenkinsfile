@@ -3,20 +3,20 @@ pipline{
     stages{
         stage('Setup Docker containers ') {
             steps {
-                sh 'docker-compose up -d'
+                sh label: '', script: 'docker-compose up -d'
             }
         }
     }
 
     stage('Run Regression Suite') {
         steps {
-            sh 'gradle clean test'
+            sh label: '', script: 'gradle clean test'
         }
     }
 
     stage('Close Docker containers'){
         steps {
-            sh 'docker-compose down'
+            sh label: '', script: 'docker-compose down'
         }
     }
 }
