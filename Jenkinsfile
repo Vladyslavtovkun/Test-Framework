@@ -10,7 +10,7 @@ pipeline {
         stage('stop the process')
                 {
                     steps {
-                        sh "c:/Users/Vladyslav_Tovkun/Downloads/Test-Framework/stop.bat"
+                        bat "c:/Users/Vladyslav_Tovkun/Downloads/Test-Framework/stop.bat"
                     }
                 }
     }
