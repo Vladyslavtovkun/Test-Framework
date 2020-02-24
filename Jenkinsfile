@@ -1,16 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('build')
+        stage('build and run')
                 {
                     steps {
-                        bat "c:/Users/Vladyslav_Tovkun/Downloads/Test-Framework/runner.bat"
+                        bat "c:/Users/Vladyslav_Tovkun/Downloads/Test-Framework/startAndRun.bat"
                     }
                 }
-        stage('docker-compose')
+        stage('stop the process')
                 {
                     steps {
-                        sh "docker-compose down || true"
+                        sh "c:/Users/Vladyslav_Tovkun/Downloads/Test-Framework/stop.bat"
                     }
                 }
     }
