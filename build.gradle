@@ -72,3 +72,32 @@ test {
     dependsOn 'cleanTest'
 }
 
+
+
+
+pipeline {
+    agent any
+    stages {
+        stage('clone repo') {
+            steps {
+                sh "rm -rf Test-Framework"
+                sh "git clone https://github.com/Vladyslavtovkun/Test-Framework.git"
+            }
+        }
+        stage('Start docker containers') {
+            steps {
+                sh "docker-compose up -d"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh "gradle clean test -f Test-Framework"
+            }
+        }
+        stage('Stop docker containers') {
+            steps {
+                sh "docker-compose down"
+            }
+        }
+    }
+}
