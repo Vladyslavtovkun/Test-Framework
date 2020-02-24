@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage('Build') {
         steps {
-            sh "cd"
-            sh "docker-compose up -d"
+            Bat “docker-compose up”
             echo 'Building..'
         }
     }
@@ -23,7 +22,7 @@ pipeline {
     }
     stage('close') {
         steps {
-            sh "docker-compose down"
+            Bat"docker-compose down"
             echo 'Deploying....'
         }
     }
