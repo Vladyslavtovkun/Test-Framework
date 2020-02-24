@@ -1,19 +1,15 @@
 node {
     stage('Setup Docker containers ') {
-        steps {
-            sh "docker-compose up -d"
-        }
+        sh "docker-compose up -d"
     }
 }
 stage('Run Regression Suite') {
-    steps {
-        withGradle(gradle: 'GRADLE_HOME')
-        sh 'gradle clean test'
-    }
+    withGradle(gradle: 'GRADLE_HOME')
+    sh 'gradle clean test'
+
 }
 
-post {
-    always {
-        sh "docker-compose down || true"
-    }
+stage('Stop Docker containers') {
+    sh "docker-compose down"
+
 }
