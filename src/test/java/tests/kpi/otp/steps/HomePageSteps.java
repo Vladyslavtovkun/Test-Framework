@@ -51,9 +51,9 @@ public class HomePageSteps {
         return new EmploymentPageSteps();
     }
 
-    @Step("CLick on 'Contacts' link.")
+    @Step("Click on 'Contacts' link.")
     public ContactsPageSteps clickOnContactsLink(int linkNumber) {
-        log.info("CLick on 'Contacts' link.");
+        log.info("Click on 'Contacts' link.");
         Actions action = new Actions(WebDriverRunner.getWebDriver());
         action.moveToElement(homePage.getHeaderLinks()
                 .get(linkNumber)
