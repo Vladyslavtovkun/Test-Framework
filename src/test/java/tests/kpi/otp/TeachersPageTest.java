@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import tests.BaseTest;
 import tests.kpi.otp.steps.HomePageSteps;
 
-public class TeachersTest extends BaseTest {
+public class TeachersPageTest extends BaseTest {
     HomePageSteps homePageSteps = new HomePageSteps();
 
     @Test(description = "Check valid teacher's full name.",

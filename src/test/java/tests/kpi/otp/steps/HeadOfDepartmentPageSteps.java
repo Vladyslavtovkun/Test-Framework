@@ -9,19 +9,19 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 @Log4j2
-public class HeadOfDepartmentSteps extends HomePageSteps {
+public class HeadOfDepartmentPageSteps extends HomePageSteps {
     HeadOfDepartmentPage headOfDepartmentPage;
 
-    public HeadOfDepartmentSteps() {
+    public HeadOfDepartmentPageSteps() {
         headOfDepartmentPage = new HeadOfDepartmentPage();
     }
 
 
     @Step("Check ru info on Head of department page.")
-    public DepartmentTodaySteps checkRuInfoOnHeadOfDepartmentPage(String headOfDepartmentPageTitleRu,
-                                                                  String positionRu,
-                                                                  String scientificDegreeRu,
-                                                                  String scientificTitleRu) {
+    public DepartmentTodayPageSteps checkRuInfoOnHeadOfDepartmentPage(String headOfDepartmentPageTitleRu,
+                                                                      String positionRu,
+                                                                      String scientificDegreeRu,
+                                                                      String scientificTitleRu) {
         log.info("Check ru info on Head of department page.");
         String parentWindow = WebDriverRunner.getWebDriver().getWindowHandle();
         for (String windowHandle : WebDriverRunner.getWebDriver().getWindowHandles()) {
@@ -51,14 +51,14 @@ public class HeadOfDepartmentSteps extends HomePageSteps {
                 WebDriverRunner.getWebDriver().switchTo().window(parentWindow);
             }
         }
-        return new DepartmentTodaySteps();
+        return new DepartmentTodayPageSteps();
     }
 
     @Step("Check ukr info on Head of department page.")
-    public DepartmentTodaySteps checkUkrInfoOnHeadOfDepartmentPage(String headOfDepartmentPageTitleUkr,
-                                                                   String positionUkr,
-                                                                   String scientificDegreeUkr,
-                                                                   String scientificTitleUkr) {
+    public DepartmentTodayPageSteps checkUkrInfoOnHeadOfDepartmentPage(String headOfDepartmentPageTitleUkr,
+                                                                       String positionUkr,
+                                                                       String scientificDegreeUkr,
+                                                                       String scientificTitleUkr) {
         log.info("Check ukr info on Head of department page.");
         String parentWindow = WebDriverRunner.getWebDriver().getWindowHandle();
         for (String windowHandle : WebDriverRunner.getWebDriver().getWindowHandles()) {
@@ -87,14 +87,14 @@ public class HeadOfDepartmentSteps extends HomePageSteps {
                 WebDriverRunner.getWebDriver().switchTo().window(parentWindow);
             }
         }
-        return new DepartmentTodaySteps();
+        return new DepartmentTodayPageSteps();
     }
 
     @Step("Check en info on Head of department page.")
-    public DepartmentTodaySteps checkEnInfoOnHeadOfDepartmentPage(String headOfDepartmentPageTitleEn,
-                                                                  String positionEn,
-                                                                  String scientificDegreeEn,
-                                                                  String scientificTitleEn) {
+    public DepartmentTodayPageSteps checkEnInfoOnHeadOfDepartmentPage(String headOfDepartmentPageTitleEn,
+                                                                      String positionEn,
+                                                                      String scientificDegreeEn,
+                                                                      String scientificTitleEn) {
         log.info("Check en info on Head of department page.");
         String parentWindow = WebDriverRunner.getWebDriver().getWindowHandle();
         for (String windowHandle : WebDriverRunner.getWebDriver().getWindowHandles()) {
@@ -124,6 +124,6 @@ public class HeadOfDepartmentSteps extends HomePageSteps {
                 WebDriverRunner.getWebDriver().switchTo().window(parentWindow);
             }
         }
-        return new DepartmentTodaySteps();
+        return new DepartmentTodayPageSteps();
     }
 }

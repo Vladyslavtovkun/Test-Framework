@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import tests.BaseTest;
 import tests.kpi.otp.steps.HomePageSteps;
 
-public class SearchResultTest extends BaseTest {
+public class SearchResultPageTest extends BaseTest {
     HomePageSteps homePageSteps = new HomePageSteps();
 
     @Test(description = "Check Search Result page shows result after data is entered.",

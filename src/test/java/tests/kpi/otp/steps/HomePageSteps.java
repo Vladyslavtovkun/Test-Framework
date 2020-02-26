@@ -67,7 +67,7 @@ public class HomePageSteps {
     }
 
     @Step("Click on 'Department today' link.")
-    public DepartmentTodaySteps clickOnDepartmentTodayLink(int linkNumber) {
+    public DepartmentTodayPageSteps clickOnDepartmentTodayLink(int linkNumber) {
         log.info("Click on 'Department today' link.");
         Actions action = new Actions(WebDriverRunner.getWebDriver());
         action.moveToElement(homePage.getHeaderLinks()
@@ -78,11 +78,11 @@ public class HomePageSteps {
                 .get(1)
                 .shouldBe(visible)
                 .click();
-        return new DepartmentTodaySteps();
+        return new DepartmentTodayPageSteps();
     }
 
     @Step("Click on 'Department today' link in En version.")
-    public DepartmentTodaySteps clickOnDepartmentTodayLinkInEnVersion(int linkNumber) {
+    public DepartmentTodayPageSteps clickOnDepartmentTodayLinkInEnVersion(int linkNumber) {
         log.info("Click on 'Department today' link in En version.");
         Actions action = new Actions(WebDriverRunner.getWebDriver());
         action.moveToElement(homePage.getHeaderLinks()
@@ -92,7 +92,7 @@ public class HomePageSteps {
         homePage.getDepartmentTodayEn()
                 .shouldBe(visible)
                 .click();
-        return new DepartmentTodaySteps();
+        return new DepartmentTodayPageSteps();
     }
 
     @Step("Return to home page.")
@@ -134,25 +134,25 @@ public class HomePageSteps {
     }
 
     @Step("Enter valid data to search fragment.")
-    public SearchResultSteps enterValidDataToSearchFragment(String validData) {
+    public SearchResultPageSteps enterValidDataToSearchFragment(String validData) {
         log.info("Enter valid data to search fragment.");
         homePage.getHeaderFragment()
                 .getSearch()
                 .shouldBe(visible)
                 .setValue(validData)
                 .pressEnter();
-        return new SearchResultSteps();
+        return new SearchResultPageSteps();
     }
 
     @Step("Enter invalid data to search fragment.")
-    public SearchResultSteps enterInvalidDataToSearchFragment(String invalidData) {
+    public SearchResultPageSteps enterInvalidDataToSearchFragment(String invalidData) {
         log.info("Enter invalid data to search fragment.");
         homePage.getHeaderFragment()
                 .getSearch()
                 .shouldBe(visible)
                 .setValue(invalidData)
                 .pressEnter();
-        return new SearchResultSteps();
+        return new SearchResultPageSteps();
     }
 
     @Step("Check copyright info.")

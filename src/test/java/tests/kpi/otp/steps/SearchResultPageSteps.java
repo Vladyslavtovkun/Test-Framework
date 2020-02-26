@@ -8,28 +8,28 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 @Log4j2
-public class SearchResultSteps extends HomePageSteps {
+public class SearchResultPageSteps extends HomePageSteps {
     SearchResultPage searchResult;
 
-    public SearchResultSteps() {
+    public SearchResultPageSteps() {
         searchResult = new SearchResultPage();
     }
 
     @Step("Search result page shows valid result.")
-    public SearchResultSteps checkValidResultOnSearchResultPage(String resultText) {
+    public SearchResultPageSteps checkValidResultOnSearchResultPage(String resultText) {
         log.info("Search result page shows valid result.");
         searchResult.getValidResult()
                 .shouldBe(visible)
                 .shouldHave(text(resultText));
-        return new SearchResultSteps();
+        return new SearchResultPageSteps();
     }
 
     @Step("Search result page shows invalid result.")
-    public SearchResultSteps checkInvalidResultOnSearchResultPage(String errorMessage) {
+    public SearchResultPageSteps checkInvalidResultOnSearchResultPage(String errorMessage) {
         log.info("Search result page shows invalid result.");
         searchResult.getInvalidResultMessage()
                 .shouldBe(visible)
                 .shouldHave(text(errorMessage));
-        return new SearchResultSteps();
+        return new SearchResultPageSteps();
     }
 }

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import tests.BaseTest;
 import tests.kpi.otp.steps.HomePageSteps;
 
-public class HeadOfDepartmentTest extends BaseTest {
+public class HeadOfDepartmentPageTest extends BaseTest {
     HomePageSteps homePageSteps = new HomePageSteps();
 
     @Test(description = "RedirectToHeadOfDepartmentPage.",

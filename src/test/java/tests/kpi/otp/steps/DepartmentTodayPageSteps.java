@@ -6,33 +6,32 @@ import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 @Log4j2
-public class DepartmentTodaySteps extends HomePageSteps {
+public class DepartmentTodayPageSteps extends HomePageSteps {
     DepartmentTodayPage departmentTodayPage;
     HomePage homePage;
 
-    public DepartmentTodaySteps() {
+    public DepartmentTodayPageSteps() {
         departmentTodayPage = new DepartmentTodayPage();
         homePage = new HomePage();
     }
 
     @Step("Department Today page shows valid info.")
-    public DepartmentTodaySteps checkValidResultOnDepartmentTodayPage(String departmentToday) {
+    public DepartmentTodayPageSteps checkValidResultOnDepartmentTodayPage(String departmentToday) {
         log.info("Department Today page shows valid info.");
         departmentTodayPage.getDepartmentTodayHeadline()
                 .shouldBe(visible)
                 .shouldHave(text(departmentToday));
-        return new DepartmentTodaySteps();
+        return new DepartmentTodayPageSteps();
     }
 
     @Step("Change language to Ukrainian.")
-    public DepartmentTodaySteps changeLanguageToUkrainian(int linkNumber) {
+    public DepartmentTodayPageSteps changeLanguageToUkrainian(int linkNumber) {
         log.info("Change language to Ukrainian.");
         Actions action = new Actions(WebDriverRunner.getWebDriver());
         action.moveToElement(homePage.getHeaderLinks()
@@ -46,7 +45,7 @@ public class DepartmentTodaySteps extends HomePageSteps {
     }
 
     @Step("Change language to English.")
-    public DepartmentTodaySteps changeLanguageToEnglish(int linkNumber) {
+    public DepartmentTodayPageSteps changeLanguageToEnglish(int linkNumber) {
         log.info("Change language to English.");
         Actions action = new Actions(WebDriverRunner.getWebDriver());
         action.moveToElement(homePage.getHeaderLinks()
@@ -61,7 +60,7 @@ public class DepartmentTodaySteps extends HomePageSteps {
     }
 
     @Step("Open Head of Department page in new tab.")
-    public HeadOfDepartmentSteps openHeadOfDepartmentPageInNewTab(boolean isEng) {
+    public HeadOfDepartmentPageSteps openHeadOfDepartmentPageInNewTab(boolean isEng) {
         JavascriptExecutor js = (JavascriptExecutor) WebDriverRunner.getWebDriver();
         String script = "return arguments[0].target='_blank'";
         if (isEng){
@@ -74,6 +73,6 @@ public class DepartmentTodaySteps extends HomePageSteps {
             js.executeScript(script, departmentTodayPage.getHeadOfDepartmentLink());
             departmentTodayPage.getHeadOfDepartmentLink().click();
         }
-        return new HeadOfDepartmentSteps();
+        return new HeadOfDepartmentPageSteps();
     }
 }

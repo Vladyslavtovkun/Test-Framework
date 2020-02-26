@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import tests.BaseTest;
 import tests.kpi.otp.steps.HomePageSteps;
 
-public class InfoPagesTest extends BaseTest {
+public class InfoPageTest extends BaseTest {
     HomePageSteps homePageSteps = new HomePageSteps();
 
     @Test(description = "Check employment page info on different languages.",
